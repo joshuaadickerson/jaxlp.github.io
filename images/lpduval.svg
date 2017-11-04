@@ -23,7 +23,7 @@
                 <polygon id="Shape" fill="#55565A" points="1105.4 194.4 1130.8 194.4 1180.8 276.3 1180.8 194.4 1204.6 194.4 1204.6 316.4 1180.8 316.4 1129.4 231.3 1129.4 316.4 1105.4 316.4"></polygon>
             </g>
         </g>
-        <text id="Party-of-Duval-Count" font-family="Roboto-Thin, Roboto" font-size="90" font-style="condensed" font-weight="300" fill="#55565A">
+        <text id="Party-of-Duval-Count" font-family="Roboto-Thin, Roboto, sans-serif" font-size="90" font-style="condensed" font-weight="300" fill="#55565A">
             <tspan x="352" y="409">Party of Duval County</tspan>
         </text>
     </g>
