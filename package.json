@@ -1,0 +1,21 @@
+{
+  "name": "lp",
+  "version": "1.0.0",
+  "description": "The Libertarian Party of Duval County, Florida Affiliate Website",
+  "main": "gulpfile.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaxlp/jaxlp.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaxlp/jaxlp.github.io/issues"
+  },
+  "homepage": "https://github.com/jaxlp/jaxlp.github.io#readme",
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "material-components-web": "^0.25.0"
+  }
+}
