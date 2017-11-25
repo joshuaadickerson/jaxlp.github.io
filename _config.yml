@@ -1,0 +1,12 @@
+plugins:
+  - jekyll-gist
+  - jekyll-coffeescript
+  - jekyll-assets
+  - jekyll-livereload
+
+sass:
+  sass_dir: _sass
+
+incremental: true
+
+livereload: true
