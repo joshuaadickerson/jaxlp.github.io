@@ -7,12 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta class="foundation-mq">
     <title>Libertarian Party of Duval County, Florida</title>
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>-->
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>-->
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>-->
-
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />-->
-    <!--<link href="/css/foundation.css" rel="stylesheet" />-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="/js/materialize/bin/materialize.min.js"></script>
+    <link href="/css/materialize.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -23,21 +20,6 @@
                 <img src="/images/lpduval.svg" alt="Libertarian Party of Duval County, Florida">
             </a>
         </div>
-
-        <!--<nav>-->
-        <!--<ul-->
-        <!--data-responsive-menu="accordion"-->
-        <!--role="tablist"-->
-        <!--aria-multiselectable="true"-->
-        <!--data-accordionmenu="iume1o-accordionmenu"-->
-        <!--data-responsivemenu="wimwih-responsivemenu"-->
-        <!--&gt;-->
-        <!--<li role="menuitem"><a>About</a></li>-->
-        <!--<li role="menuitem"><a>Meet Us</a></li>-->
-        <!--<li role="menuitem"><a>Join</a></li>-->
-        <!--<li role="menuitem"><a>Contribute</a></li>-->
-        <!--</ul>-->
-        <!--</nav>-->
     </div>
 
     <blockquote cite="Gary Johnson">
@@ -74,9 +56,14 @@
         <div id="stay-in-contact-section">
             <h2>Stay In Contact</h2>
             <form id="stay-in-contact-form">
-                <!-- this requires type="text" to be styled -->
-                <div class="contact-input"><input type="text" placeholder="Name"></div>
-                <div class="contact-input"><input type="email" placeholder="Email Address"></div>
+                <div class="contact-input">
+                    <input id="contact-input-name" type="text" class="validate">
+                    <label for="contact-input-name">Name</label>
+                </div>
+                <div class="contact-input">
+                    <input id="contact-input-email" type="email" class="validate">
+                    <label for="contact-input-email">Email Address</label>
+                </div>
                 <div class="helper-text">
                     <small>
                         <a href="#what-are-you-going-to-send-me-modal" rel="modal:open">What are you going to send me?</a><br>
@@ -105,7 +92,7 @@
     </section>
 
     <section id="who-we-are" class="expanded-section">
-        <header class="left-col large-4 columns text-center">
+        <header>
             <h2 style="margin-bottom: 0">Who We Are</h2>
             <img src="/images/what-we-do.png" style="margin-top: -20px">
         </header>
@@ -167,7 +154,7 @@
     <section id="get-involved" class="expanded-section">
         <header>
             <h2 style="margin-bottom: 0">Get Involved</h2>
-            <img src="/images/get-involved.png" style="margin-top: -20px">
+            <img src="/images/get-involved.png" style="margin-top: -20px; width: 100%;">
         </header>
         <div>
             <h3>Join The Libertarian Party</h3>
@@ -261,66 +248,65 @@
     </div>
 </footer>
 
-<aside id="what-are-you-going-to-send-me-modal" class="modal modal__bg" role="dialog" aria-hidden="true">
-<header>
-<h3>What are you going to send me?</h3>
-</header>
-<section>
-@todo
-</section>
-<footer>
-<a href="#" rel="modal:close">Okay</a>
-</footer>
+<aside id="what-are-you-going-to-send-me-modal" class="modal card">
+    <header>
+        <h3>What are you going to send me?</h3>
+    </header>
+    <section>
+        @todo
+    </section>
+    <footer>
+        <a href="#" rel="modal:close">Okay</a>
+    </footer>
 </aside>
 
 <aside id="what-do-you-do-with-my-information-modal" class="modal">
-<header>
-<h2>What do you do with my information?</h2>
-</header>
-<section>
-@todo
-</section>
-<footer>
-<a href="#" rel="modal:close">Okay</a>
-</footer>
+    <header>
+        <h2>What do you do with my information?</h2>
+    </header>
+    <section>
+        @todo
+    </section>
+    <footer>
+        <a href="#" rel="modal:close">Okay</a>
+    </footer>
 </aside>
 
 <aside id="where-does-my-money-go-modal" class="modal">
-<header>
-<h2>Where does my money go?</h2>
-</header>
-<section>
-@todo
-</section>
-<footer>
-<a href="#" rel="modal:close">Okay</a>
-</footer>
+    <header>
+        <h2>Where does my money go?</h2>
+    </header>
+    <section>
+        @todo
+    </section>
+    <footer>
+        <a href="#" rel="modal:close">Okay</a>
+    </footer>
 </aside>
 
 <aside id="signup-modal" class="modal">
-<header>
-<h2>Signup</h2>
-</header>
-<section>
-@todo
-</section>
-<footer>
-<a href="#" rel="modal:close">Okay</a>
-</footer>
+    <header>
+        <h2>Signup</h2>
+    </header>
+    <section>
+        @todo
+    </section>
+    <footer>
+        <a href="#" rel="modal:close">Okay</a>
+    </footer>
 </aside>
 
 <aside id="contribute-modal" class="modal">
-<header>
-<h2>Contribute</h2>
-</header>
-<section>
-@todo
-</section>
-<footer>
-<a href="#" rel="modal:close">Okay</a>
-</footer>
+    <header>
+        <h2>Contribute</h2>
+    </header>
+    <section>
+        @todo
+    </section>
+    <footer>
+        <a href="#" rel="modal:close">Okay</a>
+    </footer>
 </aside>
-
 
 </body>
 </html>
