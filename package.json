@@ -16,6 +16,9 @@
   "homepage": "https://github.com/jaxlp/jaxlp.github.io#readme",
   "dependencies": {
     "font-awesome": "^4.7.0",
-    "material-components-web": "^0.25.0"
+    "foundation-sites": "^6.4.4-rc1",
+    "material-components-web": "^0.25.0",
+    "material-design-iconic-font": "^2.2.0",
+    "materialfoundation": "^0.2.2"
   }
 }

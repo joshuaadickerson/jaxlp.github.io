@@ -1,0 +1,24 @@
+// Reference:
+// http://www.google.com/design/spec/components/toolbars.html
+
+.top-bar {
+  height: rem-calc(56);
+  line-height: rem-calc(32);
+  @extend .z-depth-1;
+  a {
+    color: $white;
+  }
+  .dark {
+    color: $black-54;
+  }
+  .text-title {
+    color: $white;
+    font-weight: 500;
+    line-height: inherit;
+  }
+}
+.menu > li > a {
+  padding: 1rem;
+  height: 3.5rem;
+  line-height: inherit;
+}

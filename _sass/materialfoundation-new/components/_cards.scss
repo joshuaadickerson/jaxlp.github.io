@@ -1,0 +1,17 @@
+.callout {
+  border-radius: $global-radius;
+  @extend .z-depth-1;
+  background: $white;
+  .text-caption {
+    color: $black-26;
+  }
+  .button {
+    margin-bottom: -.5em;
+    &:first-child {
+      margin-left: -.5em
+    }
+    &:last-child {
+      margin-right: -.5em
+    }
+  }
+}

@@ -7,102 +7,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta class="foundation-mq">
     <title>Libertarian Party of Duval County, Florida</title>
-    <link href="css/demo.css" rel="stylesheet" />
-    <!-- <link rel="stylesheet" href="../node_modules/motion-ui/dist/motion-ui.css" /> -->
-    <!-- uncomment this line ^ to use the motion-ui library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
+    <link href="/css/foundation.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 </head>
 <body>
 
 <header>
     <div class="row">
-        <div class="large-5 columns">
+        <div id="logo-link">
             <a href="/">
-                <img src="images/lpduval.svg" alt="Libertarian Party of Duval County, Florida">
+                <img src="/images/lpduval.svg" alt="Libertarian Party of Duval County, Florida">
             </a>
         </div>
 
-        <nav class="large-6 large-offset-1 columns align-middle large-collapse">
-            <ul class="menu accordion-menu"
-                data-responsive-menu="accordion"
-                role="tablist"
-                aria-multiselectable="true"
-                data-accordionmenu="iume1o-accordionmenu"
-                data-responsivemenu="wimwih-responsivemenu"
-            >
-                <li role="menuitem"><a class="flat-button ink">About</a></li>
-                <li role="menuitem"><a class="flat-button ink">Meet Us</a></li>
-                <li role="menuitem"><a class="flat-button ink">Join</a></li>
-                <li role="menuitem"><a class="flat-button ink">Contribute</a></li>
-            </ul>
-        </nav>
+        <!--<nav>-->
+            <!--<ul-->
+                <!--data-responsive-menu="accordion"-->
+                <!--role="tablist"-->
+                <!--aria-multiselectable="true"-->
+                <!--data-accordionmenu="iume1o-accordionmenu"-->
+                <!--data-responsivemenu="wimwih-responsivemenu"-->
+            <!--&gt;-->
+                <!--<li role="menuitem"><a>About</a></li>-->
+                <!--<li role="menuitem"><a>Meet Us</a></li>-->
+                <!--<li role="menuitem"><a>Join</a></li>-->
+                <!--<li role="menuitem"><a>Contribute</a></li>-->
+            <!--</ul>-->
+        <!--</nav>-->
     </div>
 
-    <blockquote class="row header-quote" cite="Gary Johnson">
+    <blockquote cite="Gary Johnson">
         Using a broad brushstroke, I think Libertarian - most of America are socially accepting and fiscally responsible. I’m in that category. I think, broadly speaking, that’s a Libertarian. A Libertarian is going to be somebody who’s really strong on civil liberties.
-        <cite class="citation text-right">Gary Johnson</cite>
+        <cite>Gary Johnson</cite>
     </blockquote>
 </header>
 
 <main class="row column">
     <section id="intro-section">
-        <div class="small-12 medium-12 large-4 columns text-center">
+        <div>
             <h3>Who We Are</h3>
-            <img src="images/what-we-do.png">
+            <img src="/images/what-we-do.png">
             <p>We are the official Libertarian Party affiliate of Duval County, Florida</p>
-            <a class="raised-button cta-button ink">Learn More</a>
+            <a class="section-link">Learn More</a>
         </div>
 
-        <div class="small-12 medium-12 large-4 columns text-center">
+        <div>
             <h3>Meet Us</h3>
-            <img src="images/who-we-are.png">
+            <img src="/images/who-we-are.png">
             <p>Learn about our members, candidates, and come meet us</p>
-            <a class="raised-button cta-button ink">Meet Us</a>
+            <a class="section-link">Meet Us</a>
         </div>
 
-        <div class="small-12 medium-12 large-4 columns text-center">
+        <div>
             <h3>Get Involved</h3>
-            <img src="images/get-involved.png" style="width: 225px;">
+            <img src="/images/get-involved.png" style="width: 225px;">
             <p>Become a member and join the party that represents <em>you</em></p>
-            <a class="raised-button cta-button ink">Join</a>
+            <a class="section-link">Join</a>
         </div>
     </section>
 
-    <section class="cta-section">
-        <div class="large-6 columns">
+    <section id="cta-section">
+        <div id="stay-in-contact-section">
             <h2>Stay In Contact</h2>
             <form>
                 <div class="large-6 columns"><input type="text" placeholder="Name"></div>
                 <div class="large-6 columns"><input type="email" placeholder="Email Address"></div>
-                <div class="large-8 columns">
+                <div class="helper-text">
                     <small>
-                        <a href="#">What are you going to send me?</a><br>
+                        <a href="#what-are-you-going-to-send-me-modal" rel="modal:open">What are you going to send me?</a><br>
                         <a href="#">What do you do with my information?</a>
                     </small>
                 </div>
-                <div class="large-4 columns"><button class="raised-button">Sign Up</button></div>
+                <div class="cta"><button>Sign Up</button></div>
             </form>
         </div>
 
-        <div class="large-6 columns" style="border-left: 2px solid #e1e1e1">
+        <div id="contribute-section">
             <h2>Contribute To Liberty</h2>
-            <a href="#" class="raised-accent-button ink"><span>$</span>5</a>
-            <a href="#" class="raised-accent-button ink"><span>$</span>10</a>
-            <a href="#" class="raised-accent-button ink"><span>$</span>25</a>
-            <a href="#" class="raised-accent-button ink"><span>$</span>50</a>
-            <a href="#" class="raised-accent-button ink"><span>$</span>100</a>
-            <div class="large-8 columns">
+            <a href="#" class="amount-selector"><span>$</span>5</a>
+            <a href="#" class="amount-selector"><span>$</span>10</a>
+            <a href="#" class="amount-selector"><span>$</span>25</a>
+            <a href="#" class="amount-selector"><span>$</span>50</a>
+            <a href="#" class="amount-selector"><span>$</span>100</a>
+
+            <div class="helper-text">
                 <small>
                     <a href="#">Where does my money go?</a><br>
                 </small>
             </div>
-            <div class="large-4 columns"><button class="raised-button">Contribute</button></div>
+            <div class="cta"><button>Contribute</button></div>
         </div>
     </section>
 
     <section id="who-we-are" class="expanded-section">
         <header class="left-col large-4 columns text-center">
             <h2 style="margin-bottom: 0">Who We Are</h2>
-            <img src="images/what-we-do.png" style="margin-top: -20px">
+            <img src="/images/what-we-do.png" style="margin-top: -20px">
         </header>
         <div class="large-8 columns">
             <h3 class="raised-accent-button">What is the Libertarian Party</h3>
@@ -120,13 +124,10 @@
                 <li>We believe that government’s only responsibility, if any, should be protecting people from force and fraud.</li>
             </ul>
         </div>
-        <footer class="large-offset-4 columns text-left">
+        <footer>
             <h3>Learn More</h3>
-            <a href="#" class="raised-accent-button">Platform</a>
-            <a href="#" class="raised-accent-button">On The Issues</a>
-            <a href="#" class="raised-accent-button">Frequently Asked Questions</a>
-            <a href="#" class="raised-accent-button">State Affiliate</a>
-            <a href="#" class="raised-accent-button">National Party</a>
+            <a href="#">State Affiliate</a>
+            <a href="#">National Party</a>
         </footer>
     </section>
 
@@ -135,7 +136,7 @@
     <section id="meet-us" class="expanded-section">
         <header class="left-col large-4 columns text-center">
             <h2 style="margin-bottom: 0">Meet Us</h2>
-            <img src="images/who-we-are.png" style="margin-top: -20px">
+            <img src="/images/who-we-are.png" style="margin-top: -20px">
         </header>
         <div class="large-8 columns">
             <h3 class="raised-accent-button">We <em>are</em> Duval County</h3>
@@ -154,10 +155,9 @@
         </div>
         <footer class="large-offset-4 columns text-left">
             <h3>Learn More</h3>
-            <a href="#" class="raised-accent-button">Affiliate Leadership</a>
-            <a href="#" class="raised-accent-button">Committees</a>
-            <a href="#" class="raised-accent-button">Events</a>
-            <a href="#" class="raised-accent-button">Contact Us</a>
+            <a href="#">Affiliate Leadership</a>
+            <a href="#">Events</a>
+            <a href="#">Contact Us</a>
         </footer>
     </section>
 
@@ -166,7 +166,7 @@
     <section id="get-involved" class="expanded-section">
         <header class="left-col large-4 columns text-center">
             <h2 style="margin-bottom: 0">Get Involved</h2>
-            <img src="images/get-involved.png" style="margin-top: -20px">
+            <img src="/images/get-involved.png" style="margin-top: -20px">
         </header>
         <div class="large-8 columns">
             <h3 class="raised-accent-button">Join The Libertarian Party</h3>
@@ -186,10 +186,10 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eleifend non metus non condimentum. Proin ac malesuada tellus, quis ornare odio. Donec consequat euismod feugiat. Nulla sit amet justo quis diam pulvinar molestie. Cras commodo, lectus ut posuere vestibulum, nibh felis ornare nisi, sed mattis neque dolor a arcu. Proin sollicitudin mauris est. Ut ullamcorper ipsum non volutpat sollicitudin. Etiam eros enim, bibendum sit amet molestie eget, mollis at metus. Morbi semper sit amet purus eget aliquet. Vestibulum placerat, tellus finibus blandit dictum, dolor orci vehicula nunc, non cursus leo metus quis sem. Morbi lobortis sapien quam, a ultrices enim imperdiet id.</p>
         </div>
 
-        <footer class="large-offset-4 columns text-left">
+        <footer>
             <h3>Learn More</h3>
-            <a href="#" class="raised-accent-button">Join a committee</a>
-            <a href="#" class="raised-accent-button">Run For Office</a>
+            <a href="#">Become a member</a>
+            <a href="#">Donate</a>
         </footer>
     </section>
 
@@ -199,7 +199,7 @@
     <div class="row">
         <div class="large-12 columns">
             <div class="large-3 columns">
-                <img src="images/lpduval-white2.svg" alt="Libertarian Party of Duval County">
+                <img src="/images/lpduval-white2.svg" alt="Libertarian Party of Duval County">
                 <ul id="socialnetworkicons" class="menu">
                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -260,8 +260,68 @@
     </div>
 </footer>
 
-<script src="js/material-foundation.js"></script>
-<!-- <script src='../node_modules/motion-ui/dist/motion-ui.js'></script> -->
-<!-- uncomment this line ^ to use the motion-ui library -->
+<aside id="what-are-you-going-to-send-me-modal" class="modal card">
+    <header>
+        <h3>What are you going to send me?</h3>
+    </header>
+    <section>
+        @todo
+    </section>
+    <footer>
+        <a href="#" rel="modal:close">Okay</a>
+    </footer>
+</aside>
+
+<aside id="what-do-you-do-with-my-information-modal" class="modal">
+    <header>
+        <h2>What do you do with my information?</h2>
+    </header>
+    <section>
+        @todo
+    </section>
+    <footer>
+        <a href="#" rel="modal:close">Okay</a>
+    </footer>
+</aside>
+
+<aside id="where-does-my-money-go-modal" class="modal">
+    <header>
+        <h2>Where does my money go?</h2>
+    </header>
+    <section>
+        @todo
+    </section>
+    <footer>
+        <a href="#" rel="modal:close">Okay</a>
+    </footer>
+</aside>
+
+<aside id="signup-modal" class="modal">
+    <header>
+        <h2>Signup</h2>
+    </header>
+    <section>
+        @todo
+    </section>
+    <footer>
+        <a href="#" rel="modal:close">Okay</a>
+    </footer>
+</aside>
+
+<aside id="contribute-modal" class="modal">
+    <header>
+        <h2>Contribute</h2>
+    </header>
+    <section>
+        @todo
+    </section>
+    <footer>
+        <a href="#" rel="modal:close">Okay</a>
+    </footer>
+</aside>
+
+<script src="/js/floating-label.js"></script>
+<script src="/js/ripple.js"></script>
+<script src="/js/switches.js"></script>
 </body>
 </html>

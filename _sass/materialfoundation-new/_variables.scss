@@ -1,0 +1,42 @@
+$global-width: rem-calc(960);
+$grid-container: rem-calc(960);
+
+$foundation-palette: (
+  primary: $cyan-500,
+  secondary: $yellow-500,
+  success: $green-500,
+  warning: $amber-500,
+  alert: $red-500,
+  general: $grey-900,
+);
+
+$light-gray: $grey-50;
+
+$medium-gray: $grey-200;
+
+$dark-gray: $grey-500;
+
+$black: $black-87;
+
+$body-background: $grey-200;
+
+$body-font-family: Roboto, Noto, sans-serif;
+
+$global-weight-light: 300;
+$global-weight-normal: 400;
+$global-weight-bold: 500;
+
+$global-radius: 2px;
+
+$button-padding: .7em 1em;
+$button-hollow-hover-lightness: 0;
+
+$callout-border: 0;
+
+$topbar-background: map-get($foundation-palette, primary);
+
+$table-stripe: false;
+$table-head-background: $white;
+$table-border: 0;
+$table-padding: rem-calc(15);
+$table-stripe: false;
