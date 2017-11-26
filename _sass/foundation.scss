@@ -84,7 +84,14 @@ header {
   }
 }
 
+#logo {
+  @extend .row;
+}
+
 main {
+  @extend .row;
+  @extend .column;
+
   section {
     footer {
       @extend .large-offset-4;
@@ -94,6 +101,17 @@ main {
       a {
         @extend .raised-accent-button;
       }
+    }
+  }
+}
+
+.expanded-section {
+  div {
+    @extend .large-8;
+    @extend .columns;
+
+    h3 {
+      @extend .raised-accent-button;
     }
   }
 }
@@ -150,6 +168,11 @@ footer {
 
   .helper-text {
     @extend .large-8;
+    @extend .columns;
+  }
+
+  .contact-input {
+    @extend .large-6;
     @extend .columns;
   }
 }
@@ -211,6 +234,21 @@ footer {
       margin-top: 1rem;
       a {
         padding: 0;
+      }
+    }
+  }
+
+  div {
+    @extend .row;
+
+    div {
+      @extend .large-12;
+      @extend .columns;
+
+      div {
+
+        @extend .large-3;
+        @extend .columns;
       }
     }
   }
