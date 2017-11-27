@@ -405,12 +405,14 @@
                 }
 
                 upcomingEventsDiv.append(Mustache.render(upcomingEventTemplate, {
+                    event: ele,
                     name: ele.name,
                     description: ele.description,
                     day: day,
                     month: month,
                     time: eventTime,
                     dayOfWeek: dayOfWeek,
+                    isoDate: time.format('YYYY-MM-DDTHH:mm:ssZ'),
                     venue: ele.venue,
                     url: ele.event_url
                 }))
@@ -452,12 +454,12 @@
 
 <script id="upcoming-event-content" type="text/html">
     <div class="card horizontal l12">
-        <div class="card-image waves-effect waves-block waves-light center-align l4">
-            <div class="activator">
-                <span style="margin-top: 1rem; margin-bottom: 0; padding-bottom: 0">{{dayOfWeek}}</span><br>
-                <span style="font-size: 500%; margin: 0; padding: 0">{{day}}</span><br>
-                <span style="font-size: 250%; margin: 0; padding: 0">{{month}}</span><br>
-            </div>
+        <div class="card-image waves-effect waves-block waves-light l3 valign-wrapper">
+            <time datetime="{{isoDate}}" class="cal-icon center-align">
+                <span class="cal-icon__dayOfWeek">{{dayOfWeek}}</span>
+                <span class="cal-icon__day">{{day}}</span>
+                <span class="cal-icon__month">{{month}}</span>
+            </time>
         </div>
         <div class="card-stacked" style="width:100%">
             <div class="card-content" style="margin-left:0; width:100%">
