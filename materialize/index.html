@@ -104,7 +104,7 @@
 
             <h3>The Libertarian Option</h3>
             <p>Consider voting Libertarian or joining the Libertarian Party because&hellip;</p>
-            <ul>
+            <ul class="browser-default">
                 <li>We seek to substantially reduce the size and intrusiveness of government and cut and eliminate taxes at every opportunity.</li>
                 <li>We believe that peaceful, honest people should be able to offer their goods and services to willing consumers without inappropriate interference from government.</li>
                 <li>We believe that peaceful, honest people should decide for themselves how to live their lives, without fear of criminal or civil penalties.</li>
@@ -131,16 +131,16 @@
 
             <h3>Social Media</h3>
             <p>Check us out on these social media outlets:<br>
-                <img src="https://www.seeklogo.net/wp-content/uploads/2016/09/facebook-icon-preview-1.png" style="width: 175px; height: auto">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Twitter_logo_initial.svg/2000px-Twitter_logo_initial.svg.png" style="height: 100px !important; width: auto;">
-                <a href="https://www.meetup.com/LPDuvalFL/"><img src="https://www.seeklogo.net/wp-content/uploads/2015/08/meetup-logo-vector-download.jpg" style="width: 175px; height: auto"></a>
-                <img src="https://cdn.worldvectorlogo.com/logos/slack-1.svg" style="width: 125px; height: auto">
+                <a href="https://www.facebook.com/lpduvalfl/"><img src="/images/social/facebook.png" style="width: 175px; height: auto"></a>
+                <a href="https://twitter.com/lpduvalfl"><img src="/images/social/twitter.png" style="height: 100px !important; width: auto;"></a>
+                <a href="https://www.meetup.com/LPDuvalFL/"><img src="/images/social/meetup.jpg" style="width: 175px; height: auto"></a>
+                <a href="lpduvalfl.slack.com"><img src="/images/social/slack.svg" style="width: 125px; height: auto"></a>
             </p>
 
             <h3>Meetings</h3>
             <p>General meetings are usually the second Tuesday of every month. Location, date, and times may vary based on holidays so check the <a href="#">calendar</a> for when our next meeting is or get in <a href="#">contact</a> and we’ll let you know.</p>
 
-            <div id="upcoming-events" class="container"></div>
+            <div id="upcoming-events" class="col l12"></div>
         </div>
         <footer>
             <h3>Learn More</h3>
@@ -387,8 +387,6 @@
 
 <script>
     function meetupCallback (response) {
-        console.log(response);
-
         var upcomingEventsDiv       = $('#upcoming-events'),
             upcomingEventTemplate   = $('#upcoming-event-content').html();
 
@@ -405,7 +403,6 @@
                 if (eventTime.substr(0, 1) === '0') {
                     eventTime = eventTime.substr(1);
                 }
-                console.log(dayOfWeek)
 
                 upcomingEventsDiv.append(Mustache.render(upcomingEventTemplate, {
                     name: ele.name,
@@ -414,9 +411,12 @@
                     month: month,
                     time: eventTime,
                     dayOfWeek: dayOfWeek,
-                    venue: ele.venue
+                    venue: ele.venue,
+                    url: ele.event_url
                 }))
             });
+        } else {
+            upcomingEventsDiv.html('No upcoming events');
         }
     }
 
@@ -473,10 +473,33 @@
         </div>
         <div class="card-reveal">
             <span class="card-title grey-text text-darken-4">{{name}}<i class="material-icons right">close</i></span>
-            <p>{{{description}}}</p>
-            <p><a href="#">RSVP</a></p>
+            {{{description}}}
+
+            <h5>Where</h5>
+            <address>
+                <a href="https://www.google.com/maps/search/?api=1&map_action=map&query={{venue.lat}},{{venue.lon}}" target="_blank">{{venue.name}}</a><br>
+                {{venue.address_1}}<br>
+                {{venue.address_2}}<br>
+                {{venue.city}}, {{venue.state}} {{venue.zip}}<br>
+            </address>
+            <p><a href="{{url}}">RSVP</a></p>
         </div>
     </div>
 </script>
+
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4086986.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108399984-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-108399984-1');
+</script>
+
 </body>
 </html>
