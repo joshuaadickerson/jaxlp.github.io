@@ -85,7 +85,7 @@ main {
     color: $lp-black;
 
     footer {
-      @extend .offset-l4;
+      @extend .offset-l3;
       @extend .col;
       @extend .left-align;
 
@@ -101,12 +101,22 @@ main {
 
   header {
     @extend .col;
-    @extend .l4;
+    @extend .l3;
     @extend .center-align;
+
+    h2 {
+      margin-bottom: 0;
+      width: 100%;
+    }
+
+    image {
+      margin-top: -20px;
+      width: 100%;
+    }
   }
 
   div {
-    @extend .l8;
+    @extend .l9;
     @extend .col;
 
     h3 {
