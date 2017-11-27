@@ -8,6 +8,7 @@
     <meta class="foundation-mq">
     <title>Libertarian Party of Duval County, Florida</title>
     <link href="/css/materialize.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 
@@ -82,7 +83,7 @@
 
             <div class="helper-text">
                 <small>
-                    <a href="#" class="modal-trigger">Where does my money go?</a><br>
+                    <a href="#where-does-my-money-go-modal" class="modal-trigger">Where does my money go?</a><br>
                 </small>
             </div>
             <div class="cta"><button>Contribute</button></div>
@@ -112,8 +113,8 @@
         </div>
         <footer>
             <h3>Learn More</h3>
-            <a href="#">State Affiliate</a>
-            <a href="#">National Party</a>
+            <a href="https://www.lpf.org">State Affiliate</a>
+            <a href="https://www.lp.org">National Party</a>
         </footer>
     </section>
 
@@ -138,12 +139,14 @@
 
             <h3>Meetings</h3>
             <p>General meetings are usually the second Tuesday of every month. Location, date, and times may vary based on holidays so check the <a href="#">calendar</a> for when our next meeting is or get in <a href="#">contact</a> and we’ll let you know.</p>
+
+            <div id="upcoming-events" class="container"></div>
         </div>
         <footer>
             <h3>Learn More</h3>
-            <a href="#">Affiliate Leadership</a>
+            <a href="#leadership-modal" class="modal-trigger">Affiliate Leadership</a>
             <a href="#">Events</a>
-            <a href="#">Contact Us</a>
+            <a href="#contact-us-modal" class="modal-trigger">Contact Us</a>
         </footer>
     </section>
 
@@ -174,8 +177,8 @@
 
         <footer>
             <h3>Learn More</h3>
-            <a href="#">Become a member</a>
-            <a href="#">Donate</a>
+            <a href="register.html">Become a member</a>
+            <a href="#contribute-modal">Donate</a>
         </footer>
     </section>
 
@@ -244,77 +247,236 @@
     </p>
 </footer>
 
+
 <aside id="what-are-you-going-to-send-me-modal" class="modal">
-    <section class="modal-content">
+    <section>
         <h4>What are you going to send me?</h4>
-        <p>@todo</p>
+        <p>
+            We want to keep you informed, but don't want to annoy you. So, we will let you know about upcoming events and major announcements.
+            Other than that, we hope to see you at our monthly social and at our online business meetings.
+            Expect about two or three emails a month.
+        </p>
     </section>
-    <footer class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect btn-flat">Okay</a>
+    <footer>
+        <a href="#!" class="modal-action modal-close">Okay</a>
     </footer>
 </aside>
 
 <aside id="what-do-you-do-with-my-information-modal" class="modal">
-    <header>
-        <h2>What do you do with my information?</h2>
-    </header>
     <section>
-        @todo
+        <h4>What do you do with my information?</h4>
+        <p>
+            We keep it tight to our chests. We respect your right of privacy.
+            We may share your information with the Libertarian Party of Florida and the national Libertarian Party.
+            We will not sell or give your information to anyone else, except where required by law.
+            If you donate, we must report your donation with your name, zip code, and amount.
+        </p>
     </section>
     <footer>
-        <a href="#" rel="modal:close">Okay</a>
+        <a href="#!" class="modal-action modal-close">Okay</a>
     </footer>
 </aside>
 
 <aside id="where-does-my-money-go-modal" class="modal">
-    <header>
-        <h2>Where does my money go?</h2>
-    </header>
     <section>
-        @todo
+        <h4>Where does my money go?</h4>
+        <p>
+            So glad you asked. We recognize that you're entrusting us to use your contributions to better the party and with that, the libertarian ideals that we're founded on.
+            Although we have made every effort to reduce our operating costs to their bare minimum, there are some operating costs to running as website. That's part of it.
+            We will use your contributions to purchase advertising on Facebook, Google, and other means.
+            We want to be able to pool resources to purchase merchandise that Libertarians in Duval County can be proud of, such as t-shirts, polos, hats, pins, bumper stickers, etc.
+        </p>
     </section>
     <footer>
-        <a href="#" rel="modal:close">Okay</a>
+        <a href="#!" class="modal-action modal-close">Okay</a>
     </footer>
 </aside>
 
 <aside id="signup-modal" class="modal">
-    <header>
-        <h2>Signup</h2>
-    </header>
     <section>
-        @todo
+        <h4>Stay In Contact</h4>
+        <p>Thanks for staying in contact. We'll be sending you an email soon to verify your email address.</p>
+        <p>We also took the liberty of inviting you to join our Slack channel.</p>
+
+        <h5>Become a member of the affiliate</h5>
+        <p>
+            If you're not already a member of the affiliate, we'd like to invite you to join. It's free and easy.
+            You only have to be a registered LPF voter and answer give us some more info about yourself.
+
+            <a href="register.html">Become a member</a>
+        </p>
+
     </section>
     <footer>
-        <a href="#" rel="modal:close">Okay</a>
+        <a href="#!" class="modal-action modal-close">Okay</a>
     </footer>
 </aside>
 
 <aside id="contribute-modal" class="modal">
-    <header>
-        <h2>Contribute</h2>
-    </header>
     <section>
-        @todo
+        <h4>Contribute</h4>
+        <p>
+            @todo
+        </p>
     </section>
     <footer>
-        <a href="#" rel="modal:close">Okay</a>
+        <a href="#!" class="modal-action modal-close">Okay</a>
+    </footer>
+</aside>
+
+<aside id="contact-us-modal" class="modal">
+    <section>
+        <h4>Contact Us</h4>
+        <p>
+            We have a few ways of getting in touch.
+        </p>
+
+        <ul>
+            <li><a href="mailto://info@jaxlp.com">Email</a></li>
+            <li><a href="https://www.facebook.com/lpduvalfl">Facebook</a></li>
+            <li><a href="https://m.me/lpduvalfl">Facebook Messenger</a></li>
+            <li><a href="https://twitter.com/lpduval">Twitter</a></li>
+        </ul>
+    </section>
+    <footer>
+        <a href="#!" class="modal-action modal-close">Okay</a>
+    </footer>
+</aside>
+
+<aside id="leadership-modal" class="modal">
+    <section>
+        <h4>Affiliate Leadership</h4>
+
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img src="https://pbs.twimg.com/profile_images/1811310904/logo100x100_SM_twitter_400x400.jpg" style="width: 100%; height: 100px" class="activator">
+            </div>
+            <div class="card-content">
+                <span class="card-title activator">
+                    <i class="material-icons right">more_vert</i>
+                    Joshua Dickerson<br>
+                    Chairman
+                </span>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title">
+                    <i class="material-icons right">close</i>
+                    Joshua Dickerson<br>
+                    Chairman
+                </span>
+                <p>
+                    Josh is a great guy.
+                </p>
+            </div>
+            <div class="card-action">
+                <a href="#">Email</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        <a href="#!" class="modal-action modal-close">Close</a>
     </footer>
 </aside>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 <script src="/js/materialize/bin/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js" async defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js" async defer></script>
+
 <script>
-    $(document).ready(function(){
+    function meetupCallback (response) {
+        console.log(response);
+
+        var upcomingEventsDiv       = $('#upcoming-events'),
+            upcomingEventTemplate   = $('#upcoming-event-content').html();
+
+        if (response.results) {
+            response.results.forEach(function (ele) {
+                console.log(ele);
+                var time = moment(ele.time);
+
+                var day         = time.format('DD').substr(0, 3),
+                    month       = time.format('MMM').substr(0, 3),
+                    dayOfWeek   = time.format('ddd').substr(0, 3),
+                    eventTime   = time.format("hh:mm a");
+
+                if (eventTime.substr(0, 1) === '0') {
+                    eventTime = eventTime.substr(1);
+                }
+                console.log(dayOfWeek)
+
+                upcomingEventsDiv.append(Mustache.render(upcomingEventTemplate, {
+                    name: ele.name,
+                    description: ele.description,
+                    day: day,
+                    month: month,
+                    time: eventTime,
+                    dayOfWeek: dayOfWeek,
+                    venue: ele.venue
+                }))
+            });
+        }
+    }
+
+    $(document).ready(function() {
+        $('.datepicker').pickadate({
+            selectMonths: true, // Creates a dropdown to control month
+            selectYears: 15, // Creates a dropdown of 15 years to control year,
+            today: 'Today',
+            clear: 'Clear',
+            close: 'Ok',
+            closeOnSelect: false // Close upon selecting a date,
+        });
+
         $('.modal').modal();
 
         $('button').addClass('waves-effect');
 
-        var meetup_uri = 'https://api.meetup.com/2/events?offset=0&format=json&limited_events=False&group_urlname=LPDuvalFL&photo-host=secure&page=5&fields=&order=time&status=upcoming&desc=false&sig_id=194838484&sig=092a798571b1d02a621fe23a677b7ede0fcb6032\n';
-        $.get(meetup_uri, function (res) {
-            console.log(res)
+        var meetup_uri = 'https://api.meetup.com/2/events?offset=0&format=json&limited_events=False&group_urlname=LPDuvalFL&photo-host=secure&page=5&fields=&order=time&status=upcoming&desc=false&sig_id=194838484&sig=092a798571b1d02a621fe23a677b7ede0fcb6032';
+
+        $.ajax({
+            url: meetup_uri,
+            dataType: 'jsonp',
+            jsonpCallback: 'meetupCallback'
         });
     });
+
+    $('#stay-in-contact-form').submit(function (e) {
+        e.preventDefault();
+
+        var modal = $('#signup-modal').modal('open');
+    });
+</script>
+
+<script id="upcoming-event-content" type="text/html">
+    <div class="card horizontal l12">
+        <div class="card-image waves-effect waves-block waves-light center-align l4">
+            <div class="activator">
+                <span style="margin-top: 1rem; margin-bottom: 0; padding-bottom: 0">{{dayOfWeek}}</span><br>
+                <span style="font-size: 500%; margin: 0; padding: 0">{{day}}</span><br>
+                <span style="font-size: 250%; margin: 0; padding: 0">{{month}}</span><br>
+            </div>
+        </div>
+        <div class="card-stacked" style="width:100%">
+            <div class="card-content" style="margin-left:0; width:100%">
+                <span class="card-title activator grey-text text-darken-4"><i class="material-icons right">more_vert</i>{{name}}</span>
+                <p>
+                    {{time}} @ {{venue.name}}<br>
+                </p>
+            </div>
+            <div class="card-action" style="width: 100%">
+                <a href="#!" class="activator">Learn More</a>
+                <a href="#!">RSVP</a>
+            </div>
+        </div>
+        <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">{{name}}<i class="material-icons right">close</i></span>
+            <p>{{{description}}}</p>
+            <p><a href="#">RSVP</a></p>
+        </div>
+    </div>
 </script>
 </body>
 </html>

@@ -325,3 +325,17 @@ footer {
   @extend .waves-light;
   @extend .btn;
 }
+
+.modal {
+  section {
+    @extend .modal-content;
+  }
+
+  footer {
+    @extend .modal-footer;
+
+    a {
+      @extend .waves-effect, .btn-flat;
+    }
+  }
+}
