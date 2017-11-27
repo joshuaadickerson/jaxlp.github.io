@@ -81,6 +81,9 @@ main {
   section {
     @extend .row;
 
+    margin-top: 2rem;
+    color: $lp-black;
+
     footer {
       @extend .offset-l4;
       @extend .col;
@@ -115,11 +118,6 @@ main {
 #logo-link {
   @extend .l5;
   @extend .col;
-}
-
-section {
-  margin-top: 2rem;
-  color: $lp-black;
 }
 
 h2 {
@@ -202,10 +200,13 @@ footer {
   }
 
   .contact-input {
-    @extend .input-field;
     @extend .l6;
     @extend .col;
   }
+}
+
+.contact-input {
+  @extend .input-field;
 }
 
 .cta {
@@ -313,4 +314,14 @@ footer {
       transform: translateX(-50%);
     }
   }
+}
+
+.name-input {
+  @extend .col, .l6;
+}
+
+#register-submit {
+  @extend .waves-effect;
+  @extend .waves-light;
+  @extend .btn;
 }
