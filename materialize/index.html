@@ -14,16 +14,16 @@
 
 <header>
     <div id="logo">
-        <div id="logo-link">
+        <h1 id="logo-link">
             <a href="/">
                 <img src="/images/lpduval.svg" alt="Libertarian Party of Duval County, Florida">
             </a>
-        </div>
+        </h1>
     </div>
 
     <blockquote cite="Gary Johnson">
-        Using a broad brushstroke, I think Libertarian - most of America are socially accepting and fiscally responsible. I’m in that category. I think, broadly speaking, that’s a Libertarian. A Libertarian is going to be somebody who’s really strong on civil liberties.
-        <cite>Gary Johnson</cite>
+        <span>Using a broad brushstroke, I think Libertarian - most of America are socially accepting and fiscally responsible. I’m in that category. I think, broadly speaking, that’s a Libertarian. A Libertarian is going to be somebody who’s really strong on civil liberties.</span>
+        <cite>&mdash; Gary Johnson</cite>
     </blockquote>
 </header>
 
@@ -32,21 +32,21 @@
         <div>
             <h3>Who We Are</h3>
             <img src="/images/what-we-do.png">
-            <p>We are the official Libertarian Party affiliate of Duval County, Florida</p>
+            <p class="flow-text">We are the official Libertarian Party affiliate of Duval County, Florida</p>
             <a class="section-link">Learn More</a>
         </div>
 
         <div>
             <h3>Meet Us</h3>
             <img src="/images/who-we-are.png">
-            <p>Learn about our members, candidates, and come meet us</p>
+            <p class="flow-text">Learn about our members, candidates, and come meet us</p>
             <a class="section-link">Meet Us</a>
         </div>
 
         <div>
             <h3>Get Involved</h3>
             <img src="/images/get-involved.png" style="width: 225px;">
-            <p>Become a member and join the party that represents <em>you</em></p>
+            <p class="flow-text">Become a member and join the party that represents <em>you</em></p>
             <a class="section-link">Join</a>
         </div>
     </section>
@@ -75,11 +75,13 @@
 
         <div id="contribute-section">
             <h2>Contribute To Liberty</h2>
-            <a href="#" class="contribute-button amount-selector" data-amount="5"><span>$</span>5</a>
-            <a href="#" class="contribute-button amount-selector" data-amount="10"><span>$</span>10</a>
-            <a href="#" class="contribute-button amount-selector" data-amount="25"><span>$</span>25</a>
-            <a href="#" class="contribute-button amount-selector" data-amount="50"><span>$</span>50</a>
-            <a href="#" class="contribute-button amount-selector" data-amount="100"><span>$</span>100</a>
+            <div id="contribute-amounts">
+                <a href="#" class="contribute-button" data-amount="5"><span>$</span>5</a>
+                <a href="#" class="contribute-button" data-amount="10"><span>$</span>10</a>
+                <a href="#" class="contribute-button" data-amount="25"><span>$</span>25</a>
+                <a href="#" class="contribute-button" data-amount="50"><span>$</span>50</a>
+                <a href="#" class="contribute-button" data-amount="100"><span>$</span>100</a>
+            </div>
 
             <div class="helper-text">
                 <small>
@@ -132,11 +134,11 @@
             <h3>Social Media</h3>
             <p>Check us out on these social media outlets:</p>
 
-            <p class="valign-wrapper">
-                <a href="https://www.facebook.com/lpduvalfl/"><img src="/images/social/facebook.png" style="width: 175px; height: auto"></a>
-                <a href="https://twitter.com/lpduvalfl"><img src="/images/social/twitter.png" style="height: 100px !important; width: auto;"></a>
-                <a href="https://www.meetup.com/LPDuvalFL/"><img src="/images/social/meetup.jpg" style="width: 175px; height: auto"></a>
-                <a href="lpduvalfl.slack.com"><img src="/images/social/slack.svg" style="width: 125px; height: auto"></a>
+            <p id="social-media-icons">
+                <a href="https://www.facebook.com/lpduvalfl/" target="_blank"><img src="/images/social/facebook.png" style="width: 175px; height: auto"></a>
+                <a href="https://twitter.com/lpduvalfl" target="_blank"><img src="/images/social/twitter.png" style="height: 100px !important; width: auto;"></a>
+                <a href="https://www.meetup.com/LPDuvalFL/" target="_blank"><img src="/images/social/meetup.jpg" style="width: 175px; height: auto"></a>
+                <a href="lpduvalfl.slack.com" target="_blank"><img src="/images/social/slack.svg" style="width: 125px; height: auto"></a>
             </p>
 
             <h3>Meetings</h3>
@@ -153,7 +155,7 @@
         <footer>
             <h3>Learn More</h3>
             <a href="#leadership-modal" class="modal-trigger">Affiliate Leadership</a>
-            <a href="#">Events</a>
+            <a href="https://www.meetup.com/LPDuvalFL/" target="_blank">Events</a>
             <a href="#contact-us-modal" class="modal-trigger">Contact Us</a>
         </footer>
     </section>
@@ -180,7 +182,30 @@
             </ul>
 
             <h3>Volunteer</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eleifend non metus non condimentum. Proin ac malesuada tellus, quis ornare odio. Donec consequat euismod feugiat. Nulla sit amet justo quis diam pulvinar molestie. Cras commodo, lectus ut posuere vestibulum, nibh felis ornare nisi, sed mattis neque dolor a arcu. Proin sollicitudin mauris est. Ut ullamcorper ipsum non volutpat sollicitudin. Etiam eros enim, bibendum sit amet molestie eget, mollis at metus. Morbi semper sit amet purus eget aliquet. Vestibulum placerat, tellus finibus blandit dictum, dolor orci vehicula nunc, non cursus leo metus quis sem. Morbi lobortis sapien quam, a ultrices enim imperdiet id.</p>
+            <p>
+                Our party is completely run by volunteers. We would love for you to come help out. There's not enough time
+                in a day to do everything we want and the best way to accomplish our goals is to divide and conquer. If
+                you want to help out for an hour or an hour a day, we're very appreciative of <em>you</em>.
+            </p>
+
+            <p>
+                Every month we have a social meeting where we invite a speaker to come and talk about a topic. We need
+                people that have a topic to talk about that would interest other Libertarians. It doesn't have to be
+                specifically Libertarian related. Some of the ideas we have are: an accountant to talk about taxes;
+                someone well versed in medical marijuana in Florida to talk about how one goes about getting their card;
+                someone to talk about hurricane preparedness; any of our elected officials to come talk about what they and
+                what they are doing for Libertarianism. Those are just examples. Suggestions are welcome.
+            </p>
+
+            <p>
+                We plan on doing phone banking. We need people to call other Libertarians in their neighborhood. We need
+                people that are willing to go to a busy place like a college campus and talk about the Libertarian Party.
+            </p>
+
+            <p>
+                That's just some of the things we are looking for. If you have a skill or just a desire, <a href="#!">contact us</a>
+                so we can talk about how you can help spread liberty in Duval County.
+            </p>
         </div>
 
         <footer>
@@ -196,7 +221,7 @@
     <div class="row">
         <div>
             <img src="/images/lpduval-white2.svg" alt="Libertarian Party of Duval County" style="width: 100%">
-            <ul id="socialnetworkicons" class="menu">
+            <ul id="socialnetworkicons">
                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                 <li><a href="#"><i class="fa fa-meetup"></i></a></li>
@@ -683,8 +708,8 @@
                 <span class="cal-icon__month">{{month}}</span>
             </time>
         </div>
-        <div class="card-stacked" style="width:100%">
-            <div class="card-content" style="margin-left:0; width:100%">
+        <div class="card-stacked" style="width: 100%">
+            <div class="card-content" style="margin-left:0; width: 100%">
                 <span class="card-title activator grey-text text-darken-4"><i class="material-icons right">more_vert</i>{{name}}</span>
                 <p>
                     {{time}} @ {{venue.name}}<br>
