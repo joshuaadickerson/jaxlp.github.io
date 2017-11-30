@@ -216,7 +216,7 @@ footer {
   }
 
   .contact-input {
-    @extend .l6;
+    @extend .l6, .s6;
     @extend .col;
   }
 }
@@ -227,7 +227,7 @@ footer {
 
 .cta {
   @extend .col;
-  @extend .l4;
+  @extend .l4, .s12;
   @extend .right-align;
 
   button {
@@ -261,6 +261,7 @@ footer {
     margin: 5px;
 
     color: $lp-black;
+    max-height: 145px;
   }
 }
 

@@ -135,10 +135,10 @@
             <p>Check us out on these social media outlets:</p>
 
             <p id="social-media-icons">
-                <a href="https://www.facebook.com/lpduvalfl/" target="_blank"><img src="/images/social/facebook.png" style="width: 175px; height: auto"></a>
-                <a href="https://twitter.com/lpduvalfl" target="_blank"><img src="/images/social/twitter.png" style="height: 100px !important; width: auto;"></a>
-                <a href="https://www.meetup.com/LPDuvalFL/" target="_blank"><img src="/images/social/meetup.jpg" style="width: 175px; height: auto"></a>
-                <a href="lpduvalfl.slack.com" target="_blank"><img src="/images/social/slack.svg" style="width: 125px; height: auto"></a>
+                <a href="https://www.facebook.com/lpduvalfl/" class="col l2" target="_blank"><img src="/images/social/facebook.png" class="responsive-img"></a>
+                <a href="https://twitter.com/lpduvalfl" class="col l2" target="_blank"><img src="/images/social/twitter.png" class="responsive-img"></a>
+                <a href="https://www.meetup.com/LPDuvalFL/" class="col l2" target="_blank"><img src="/images/social/meetup.jpg" class="responsive-img"></a>
+                <a href="lpduvalfl.slack.com" class="col l2" target="_blank"><img src="/images/social/slack.svg" class="responsive-img"></a>
             </p>
 
             <h3>Meetings</h3>
@@ -459,21 +459,12 @@
 </aside>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-<script src="/js/materialize/bin/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.1/js/materialize.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js" async defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js" async defer></script>
 
 <script>
     $(document).ready(function() {
-        $('.datepicker').pickadate({
-            selectMonths: true, // Creates a dropdown to control month
-            selectYears: 15, // Creates a dropdown of 15 years to control year,
-            today: 'Today',
-            clear: 'Clear',
-            close: 'Ok',
-            closeOnSelect: false // Close upon selecting a date,
-        });
-
         $('.modal').modal();
 
         $('.contribute-button').click(contributeButtonClick);
@@ -667,33 +658,6 @@
         Materialize.updateTextFields();
     }
 
-    function getStyle(className_) {
-
-        var styleSheets = window.document.styleSheets;
-        var styleSheetsLength = styleSheets.length;
-        for(var i = 0; i < styleSheetsLength; i++){
-            var classes = styleSheets[i].rules || styleSheets[i].cssRules;
-            if (!classes)
-                continue;
-            var classesLength = classes.length;
-            for (var x = 0; x < classesLength; x++) {
-                if (classes[x].selectorText === className_) {
-                    var ret;
-                    if(classes[x].cssText){
-                        ret = classes[x].cssText;
-                    } else {
-                        ret = classes[x].style.cssText;
-                    }
-                    if(ret.indexOf(classes[x].selectorText) === -1){
-                        ret = classes[x].selectorText + "{" + ret + "}";
-                    }
-                    return ret;
-                }
-            }
-        }
-
-    }
-
     function initMap() {
         // do nothing.
     }
@@ -750,7 +714,7 @@
     gtag('config', 'UA-108399984-1');
 </script>
 
-<script src="https://js.stripe.com/v3/"></script>
+<script src="https://js.stripe.com/v3/" async defer></script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGzxAhXZJ2ynmKACBABJ4kr-Mlfj7kCTs&libraries=places&callback=initMap" async defer></script>
 
