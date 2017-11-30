@@ -1,13 +1,10 @@
 <!doctype html>
-<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
-<html class="no-js" lang="en" dir="ltr">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libertarian Party of Duval County, Florida</title>
-    <link href="/css/materialize.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
 
 <body id="register-page">
@@ -40,9 +37,9 @@
                 We need your birthdate to check this information for verification.
             </p>
             <p>
-                <label>
-                    <input id="member-registered-lpf" name="registered-lpf" type="checkbox" required>
-                    I am a registered LPF voter
+                <label for="member-registered-lpf">
+                    <input id="member-registered-lpf" name="registered-lpf" type="checkbox">
+                    <span>I am a registered LPF voter</span>
                 </label>
             </p>
             <div class="contact-input">
@@ -139,20 +136,8 @@
     </p>
 </footer>
 
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.1/js/materialize.min.js"></script>
-
-<script>
-    $(document).ready(function() {
-        $('.datepicker').datepicker();
-
-        $('.modal').modal();
-
-        $('button').addClass('waves-effect');
-
-    });
-</script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGzxAhXZJ2ynmKACBABJ4kr-Mlfj7kCTs&libraries=places&callback=initMap" async defer></script>
 
 <script>
@@ -161,6 +146,10 @@
     }
 
     $(document).ready(function() {
+        $('.datepicker').datepicker();
+
+        $('button').addClass('waves-effect');
+
         var autocomplete = new google.maps.places.Autocomplete(
             (document.getElementById('member-address')),
             { types: ['geocode'] }

@@ -26,7 +26,6 @@ body {
 header {
   @extend .container;
   margin-top: 1rem;
-  //overflow: hidden;
 
   div {
     nav {
@@ -49,7 +48,6 @@ header {
 
   blockquote {
     @extend .card, .flow-text, small;
-    //@extend .row;
     background-color: $grey-100;
     margin-top: 2rem;
     font-size: .8rem;
@@ -155,7 +153,6 @@ footer {
 }
 
 .flat-button {
-  //@include button($background: $grey-200, $background-hover: $lp-gold, $color: $black-87);
   @extend .btn;
   @extend .btn-flat;
   background-color: $grey-200;
@@ -190,8 +187,6 @@ footer {
   @extend .waves-light;
 
   background-color: $grey-300;
-  //line-height: 2rem;
-  //font-size: 1.3rem;
   text-transform: uppercase;
   color: $lp-black;
   width:100%;
@@ -315,33 +310,6 @@ footer {
   @extend .l12;
   @extend .col;
   @extend small;
-}
-
-.person {
-  width: 100%;
-  display: inline-block;
-
-  figure {
-    //@include thumbnail;
-    position: relative;
-    padding: 0;
-    margin: 0;
-    border-radius: 50%;
-    overflow: hidden;
-    padding-top: 100%;
-    //border: $thumbnail-border;
-    //box-shadow: $thumbnail-shadow;
-
-    img {
-      position: absolute;
-      top: 0;
-      right: 0;
-      left: 50%;
-      bottom: 0;
-      height: 100%;
-      transform: translateX(-50%);
-    }
-  }
 }
 
 .name-input {
