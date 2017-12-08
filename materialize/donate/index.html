@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libertarian Party of Duval County, Florida</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body id="register-page">
+
+<header>
+    <div id="logo">
+        <div id="logo-link">
+            <a href="/">
+                <img src="/images/lpduval.svg" alt="Libertarian Party of Duval County, Florida">
+            </a>
+        </div>
+    </div>
+
+    <blockquote cite="Gary Johnson">
+        Using a broad brushstroke, I think Libertarian - most of America are socially accepting and fiscally responsible. I’m in that category. I think, broadly speaking, that’s a Libertarian. A Libertarian is going to be somebody who’s really strong on civil liberties.
+        <cite>Gary Johnson</cite>
+    </blockquote>
+</header>
+
+<main>
+    <section>
+        <form action="https://us-central1-jaxlp-187506.cloudfunctions.net/donate" method="post" id="contribute-form">
+            <p>There's some information we're required to collect by law.</p>
+            <div class="contact-input">
+                <input id="contribute-input-name" type="text" class="validate" name="name" required>
+                <label for="contribute-input-name">Name</label>
+            </div>
+
+            <div class="contact-input">
+                <input id="contribute-input-email" name="email" type="email" class="validate active">
+                <label for="contribute-input-email">Email</label>
+            </div>
+
+            <div class="contact-input">
+                <input id="contribute-input-address" name="address" type="text" class="validate active" autocomplete="street-address" placeholder="Enter your full address" required>
+                <label for="contribute-input-address" class="active">Address</label>
+            </div>
+
+            <div class="contact-input">
+                <input id="contribute-input-occupation" type="text" class="validate" name="occupation" required>
+                <label for="contribute-input-occupation">Occupation</label>
+            </div>
+
+            <div class="contact-input">
+                <input id="contribute-input-employer" type="text" class="validate" name="employer" required>
+                <label for="contribute-input-employer">Employer</label>
+            </div>
+
+            <div class="contact-input">
+                <i class="material-icons prefix">attach_money</i>
+                <input id="contribute-input-amount" type="number" name="amount" required value="5">
+                <label for="contribute-input-name" class="active">Amount</label>
+            </div>
+
+            <div class="stripe-input">
+                <label>
+                    <span id="card-element" class="field is-empty"></span>
+                    <span><span>Credit or debit card</span></span>
+                </label>
+
+                <div class="outcome">
+                    <div class="error" role="alert" id="card-errors"></div>
+                    <div class="success">
+                        Success! Your Stripe token is <span id="token"></span>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                <label for="contribute-input-subscribe">
+                    <input id="contribute-input-subscribe" name="subscribe" type="checkbox">
+                    <span>I'd like to setup a monthly subscription of this amount.</span>
+                </label>
+            </p>
+
+            <button id="register-submit">Donate</button>
+        </form>
+    </section>
+
+</main>
+
+<footer id="page-footer">
+    <div class="row">
+        <div>
+            <img src="/images/lpduval-white2.svg" alt="Libertarian Party of Duval County" style="width: 100%">
+            <ul id="socialnetworkicons" class="menu">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-meetup"></i></a></li>
+                <li><a href="#"><i class="fa fa-slack"></i></a></li>
+            </ul>
+
+            <address>
+                Libertarian Party of Duval County<br>
+                7901 Baymeadows Cir E, Apt 464<br>
+                Jacksonville, FL 32256<br>
+                <a href="mailto:info@jaxlp.com">info@jaxlp.com</a>
+            </address>
+        </div>
+
+        <div>
+            <h4>Who We Are</h4>
+            <ul>
+                <li>Introduction</li>
+                <li>Platform</li>
+                <li>On The Issues</li>
+                <li>Frequently Asked Questions</li>
+                <li>State Affiliate</li>
+                <li>National Party</li>
+            </ul>
+        </div>
+
+        <div>
+            <h4>Meet Us</h4>
+            <ul>
+                <li>Introduction</li>
+                <li>Platform</li>
+                <li>On The Issues</li>
+                <li>Frequently Asked Questions</li>
+                <li>State Affiliate</li>
+                <li>National Party</li>
+            </ul>
+        </div>
+
+        <div>
+            <h4>Get Involved</h4>
+            <ul>
+                <li>Introduction</li>
+                <li>Platform</li>
+                <li>On The Issues</li>
+                <li>Frequently Asked Questions</li>
+                <li>State Affiliate</li>
+                <li>National Party</li>
+            </ul>
+        </div>
+    </div>
+
+    <p id="copyright">
+        &copy; 2017 Libertarian Party of Duval County, Florida Inc. All Rights Reserved.<br>
+        Paid for by Libertarian Party of Duval County, Florida Inc. <br>
+        This communication is not authorized by any candidate or candidate's committee.
+    </p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.1/js/materialize.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGzxAhXZJ2ynmKACBABJ4kr-Mlfj7kCTs&libraries=places&callback=initMap" async defer></script>
+
+
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4086986.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108399984-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-108399984-1');
+</script>
+
+<script src="https://js.stripe.com/v3/" async defer></script>
+
+<script>
+    function initMap() {
+        // do nothing
+    }
+
+    $(document).ready(function() {
+        $('.datepicker').datepicker();
+
+        $('button').addClass('waves-effect');
+
+        var autocomplete = new google.maps.places.Autocomplete(
+            (document.getElementById('contribute-input-address')),
+            { types: ['geocode'] }
+        );
+
+        autocomplete.addListener('place_changed', function () {
+            var place = autocomplete.getPlace();
+
+            console.log(place);
+
+            if (!place.geometry) {
+                // User entered the name of a Place that was not suggested and
+                // pressed the Enter key, or the Place Details request failed.
+                window.alert("No details available for input: '" + place.name + "'");
+                return;
+            }
+        });
+
+        var stripe = Stripe('pk_test_YGBg7MPNOayQOOd7TcCGgAbd');
+        var elements = stripe.elements();
+
+        var card = elements.create('card', {
+            iconStyle: 'solid',
+            style: {
+                base: {
+                    iconColor: '#8898AA',
+                    color: '#231f20',
+                    lineHeight: '36px',
+                    fontWeight: 300,
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    fontSize: '19px',
+
+                    '::placeholder': {
+                        color: '#8898AA'
+                    },
+                },
+                invalid: {
+                    iconColor: '#e85746',
+                    color: '#e85746'
+                }
+            },
+            classes: {
+                focus: 'is-focused',
+                empty: 'is-empty'
+            }
+        });
+        card.mount('#card-element');
+
+        var inputs = document.querySelectorAll('input.field');
+        Array.prototype.forEach.call(inputs, function(input) {
+            input.addEventListener('focus', function() {
+                input.classList.add('is-focused');
+            });
+            input.addEventListener('blur', function() {
+                input.classList.remove('is-focused');
+            });
+            input.addEventListener('keyup', function() {
+                if (input.value.length === 0) {
+                    input.classList.add('is-empty');
+                } else {
+                    input.classList.remove('is-empty');
+                }
+            });
+        });
+
+        card.on('change', function(event) {
+            setOutcome(event);
+        });
+
+        card.addEventListener('change', function(event) {
+            var displayError = document.getElementById('card-errors');
+            if (event.error) {
+                displayError.textContent = event.error.message;
+            } else {
+                displayError.textContent = '';
+            }
+        });
+
+        // Create a token or display an error when the form is submitted.
+        var form = document.getElementById('contribute-form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            stripe.createToken(card).then(function(result) {
+                if (result.error) {
+                    console.log(result.error)
+                    // Inform the customer that there was an error
+                    var errorElement = document.getElementById('card-errors');
+                    errorElement.textContent = result.error.message;
+                } else {
+                    // Send the token to your server
+                    stripeTokenHandler(result.token);
+                }
+            });
+        });
+    });
+
+    function setOutcome(result) {
+        var successElement = document.querySelector('.success');
+        var errorElement = document.querySelector('.error');
+        successElement.classList.remove('visible');
+        errorElement.classList.remove('visible');
+
+        if (result.token) {
+            // Use the token to create a charge or a customer
+            // https://stripe.com/docs/charges
+            successElement.querySelector('.token').textContent = result.token.id;
+            successElement.classList.add('visible');
+        } else if (result.error) {
+            errorElement.textContent = result.error.message;
+            errorElement.classList.add('visible');
+        }
+    }
+
+    function stripeTokenHandler(token) {
+        console.log(token);
+
+        document.getElementById('token').textContent = token;
+        // Insert the token ID into the form so it gets submitted to the server
+        var form = document.getElementById('contribute-form');
+        var hiddenInput = document.createElement('input');
+        hiddenInput.setAttribute('type', 'hidden');
+        hiddenInput.setAttribute('name', 'stripeToken');
+        hiddenInput.setAttribute('value', token.id);
+        form.appendChild(hiddenInput);
+
+        // Submit the form
+        form.submit();
+    }
+</script>
+</body>
+</html>
