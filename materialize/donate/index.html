@@ -26,7 +26,7 @@
 
 <main>
     <section>
-        <form action="https://us-central1-jaxlp-187506.cloudfunctions.net/donate" method="post" id="contribute-form">
+        <form id="contribute-form">
             <p>There's some information we're required to collect by law.</p>
             <div class="contact-input">
                 <input id="contribute-input-name" type="text" class="validate" name="name" required>
@@ -68,7 +68,7 @@
                 <div class="outcome">
                     <div class="error" role="alert" id="card-errors"></div>
                     <div class="success">
-                        Success! Your Stripe token is <span id="token"></span>
+                        Your card has been validated.
                     </div>
                 </div>
             </div>
@@ -149,6 +149,31 @@
     </p>
 </footer>
 
+<aside id="thank-you-modal" class="modal">
+    <section>
+        <h4>Thank you</h4>
+        <p>
+            Thank you so very much for your contribution to liberty.
+        </p>
+    </section>
+    <footer>
+        <a href="#!" class="modal-action modal-close">Close</a>
+    </footer>
+</aside>
+
+<aside id="donation-error-modal" class="modal">
+    <section>
+        <h4>Uh oh, there was an error</h4>
+        <p>
+            There appears to be an issue&hellip;<br>
+            <span id="donation-error-text"></span>
+        </p>
+    </section>
+    <footer>
+        <a href="#!" class="modal-action modal-close">Close</a>
+    </footer>
+</aside>
+
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.1/js/materialize.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGzxAhXZJ2ynmKACBABJ4kr-Mlfj7kCTs&libraries=places&callback=initMap" async defer></script>
@@ -171,11 +196,15 @@
 <script src="https://js.stripe.com/v3/" async defer></script>
 
 <script>
+    var donateFormAction = 'https://us-central1-jaxlp-187506.cloudfunctions.net/donate';
+    var formCanSubmit = true;
+
     function initMap() {
         // do nothing
     }
 
     $(document).ready(function() {
+        $('.modal').modal();
         $('.datepicker').datepicker();
 
         $('button').addClass('waves-effect');
@@ -187,8 +216,6 @@
 
         autocomplete.addListener('place_changed', function () {
             var place = autocomplete.getPlace();
-
-            console.log(place);
 
             if (!place.geometry) {
                 // User entered the name of a Place that was not suggested and
@@ -263,6 +290,12 @@
         form.addEventListener('submit', function(event) {
             event.preventDefault();
 
+            if (!formCanSubmit) {
+                $('#donation-error-text').html('It appears you have already submitted your donation. For your safety, please refresh this page to submit another donation.');
+                M.Modal.getInstance(document.getElementById('donation-error-modal')).open();
+                return;
+            }
+
             stripe.createToken(card).then(function(result) {
                 if (result.error) {
                     console.log(result.error)
@@ -295,19 +328,33 @@
     }
 
     function stripeTokenHandler(token) {
-        console.log(token);
-
-        document.getElementById('token').textContent = token;
         // Insert the token ID into the form so it gets submitted to the server
         var form = document.getElementById('contribute-form');
         var hiddenInput = document.createElement('input');
+        hiddenInput.setAttribute('id', 'stripeToken');
         hiddenInput.setAttribute('type', 'hidden');
         hiddenInput.setAttribute('name', 'stripeToken');
         hiddenInput.setAttribute('value', token.id);
         form.appendChild(hiddenInput);
 
-        // Submit the form
-        form.submit();
+        var serializedForm = $(form).serialize();
+
+        $.post(donateFormAction, serializedForm)
+            .done(function (result) {
+                console.log(result);
+                M.Modal.getInstance(document.getElementById('thank-you-modal')).open()
+
+                formCanSubmit = false;
+            })
+            .fail(function (err) {
+                console.error(err);
+                $('#donation-error-text').text(JSON.stringify(err));
+                console.error(document.getElementById('donation-error-modal'));
+                M.Modal.getInstance(document.getElementById('donation-error-modal')).open()
+            })
+            .always(function (result) {
+                form.removeChild(hiddenInput);
+            })
     }
 </script>
 </body>
