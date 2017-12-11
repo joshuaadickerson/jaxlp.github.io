@@ -106,6 +106,10 @@ function setOutcome(result) {
 }
 
 function stripeTokenHandler(token) {
+    if (grecaptcha) {
+        grecaptcha.execute();
+    }
+
     // Insert the token ID into the form so it gets submitted to the server
     var form = document.getElementById('contribute-form');
     var hiddenInput = document.createElement('input');

@@ -30,9 +30,12 @@ $(document).ready(function() {
         });
     }
 
-    if (grecaptcha) {
-        grecaptcha.execute();
-    }
+    // if (grecaptcha) {
+    //     grecaptcha.render('recaptcha', {
+    //         sitekey: '6LfQ7zYUAAAAAN7OShfZvnZ_qav6GxVTkVLmpYOd',
+    //         size: 'invisible',
+    //     })
+    // }
 });
 
 function contributeButtonClick(event) {

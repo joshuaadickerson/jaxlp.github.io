@@ -106,14 +106,27 @@ function setOutcome(result) {
 }
 
 function stripeTokenHandler(token) {
-    // Insert the token ID into the form so it gets submitted to the server
     var form = document.getElementById('contribute-form');
+
+    // Insert the token ID into the form so it gets submitted to the server
     var hiddenInput = document.createElement('input');
     hiddenInput.setAttribute('id', 'stripeToken');
     hiddenInput.setAttribute('type', 'hidden');
     hiddenInput.setAttribute('name', 'stripeToken');
     hiddenInput.setAttribute('value', token.id);
     form.appendChild(hiddenInput);
+
+    if (grecaptcha) {
+        var recaptchaResponse = document.createElement('input')
+            .setAttribute('id', 'recaptcha-response')
+            .setAttribute('name', 'recaptcha-response')
+            .setAttribute('type', 'hidden');
+
+        grecaptcha.execute();
+        recaptchaResponse.setAttribute('value', grecaptcha.getResponse());
+
+        form.appendChild(recaptchaResponse);
+    }
 
     var serializedForm = $(form).serialize();
 
