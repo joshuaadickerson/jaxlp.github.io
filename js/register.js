@@ -1,6 +1,6 @@
-var donateFormAction = 'https://us-central1-jaxlp-187506.cloudfunctions.net/donate';
+var registerFormAction = 'https://us-central1-jaxlp-187506.cloudfunctions.net/donate';
 var stripePublicKey = 'pk_test_YGBg7MPNOayQOOd7TcCGgAbd';
-var donateFormCanSubmit = true;
+var registerFormCanSubmit = true;
 
 $(document).ready(function() {
     var stripe = Stripe(stripePublicKey);
@@ -68,7 +68,7 @@ $(document).ready(function() {
     form.addEventListener('submit', function(event) {
         event.preventDefault();
 
-        if (!donateFormCanSubmit) {
+        if (!registerFormCanSubmit) {
             $('#donation-error-text').html('It appears you have already submitted your donation. For your safety, please refresh this page to submit another donation.');
             M.Modal.getInstance(document.getElementById('donation-error-modal')).open();
             return;
@@ -122,7 +122,7 @@ function stripeTokenHandler(token) {
             console.log(result);
             M.Modal.getInstance(document.getElementById('thank-you-modal')).open()
 
-            donateFormCanSubmit = false;
+            registerFormCanSubmit = false;
         })
         .fail(function (err) {
             console.error(err);

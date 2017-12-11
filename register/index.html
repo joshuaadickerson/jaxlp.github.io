@@ -140,37 +140,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.1/js/materialize.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGzxAhXZJ2ynmKACBABJ4kr-Mlfj7kCTs&libraries=places&callback=initMap" async defer></script>
 
-<script>
-    function initMap() {
-        // do nothing
-    }
-
-    $(document).ready(function() {
-        $('.datepicker').datepicker();
-
-        $('button').addClass('waves-effect');
-
-        var autocomplete = new google.maps.places.Autocomplete(
-            (document.getElementById('member-address')),
-            { types: ['geocode'] }
-        );
-
-        autocomplete.addListener('place_changed', function () {
-            var place = autocomplete.getPlace();
-
-            console.log(place);
-
-            if (!place.geometry) {
-                // User entered the name of a Place that was not suggested and
-                // pressed the Enter key, or the Place Details request failed.
-                window.alert("No details available for input: '" + place.name + "'");
-                return;
-            }
-        });
-
-    });
-</script>
-
 
 <!-- Start of HubSpot Embed Code -->
 <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4086986.js"></script>
