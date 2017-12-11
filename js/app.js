@@ -1,11 +1,22 @@
 $(document).ready(function() {
-    $('.modal').modal();
-    $('.datepicker').datepicker();
-    $('button').addClass('waves-effect');
-
-    var contributeButtons = $('.contribute-button'),
+    var modals              = $('.modal'),
+        datepickers         = $('.datepicker'),
+        buttons             = $('button'),
+        contributeButtons   = $('.contribute-button'),
         stayInContactForm   = $('#stay-in-contact-form'),
         signupModal         = $('#signup-modal');
+
+    if (buttons) {
+        buttons.addClass('waves-effect');
+    }
+
+    if (modals) {
+        modals.modal();
+    }
+
+    if (datepickers) {
+        datepickers.datepicker();
+    }
 
     if (contributeButtons) {
         contributeButtons.click(contributeButtonClick);
@@ -19,6 +30,9 @@ $(document).ready(function() {
         });
     }
 
+    if (grecaptcha) {
+        grecaptcha.execute();
+    }
 });
 
 function contributeButtonClick(event) {
@@ -47,4 +61,8 @@ function contributeButtonClick(event) {
     });
 
     M.updateTextFields();
+}
+
+function recaptchaCallback() {
+
 }

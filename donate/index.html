@@ -5,6 +5,7 @@
     <title>Libertarian Party of Duval County, Florida</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body id="register-page">
@@ -80,7 +81,18 @@
                 </label>
             </p>
 
-            <button id="register-submit">Donate</button>
+            <div class="g-recaptcha"
+                 data-sitekey="6LfQ7zYUAAAAAN7OShfZvnZ_qav6GxVTkVLmpYOd"
+                 data-callback="onSubmit"
+                 data-size="invisible">
+            </div>
+
+            <button id="register-submit"
+                    class="g-recaptcha"
+                    data-sitekey="6LfQ7zYUAAAAAN7OShfZvnZ_qav6GxVTkVLmpYOd"
+                    data-callback="YourOnSubmitFn">
+                Donate
+            </button>
         </form>
     </section>
 

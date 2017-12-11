@@ -117,7 +117,7 @@ function stripeTokenHandler(token) {
 
     var serializedForm = $(form).serialize();
 
-    $.post(donateFormAction, serializedForm)
+    $.post(registerFormAction, serializedForm)
         .done(function (result) {
             console.log(result);
             M.Modal.getInstance(document.getElementById('thank-you-modal')).open()
