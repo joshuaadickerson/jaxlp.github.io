@@ -26,6 +26,12 @@ $(document).ready(function() {
         stayInContactForm.submit(function (e) {
             e.preventDefault();
 
+            // This just submits the request to HubSpot through its automatic forms thingy
+
+            var $form = $(this);
+
+            $.get($form.prop('action'), $form.serialize());
+
             signupModal.modal('open');
         });
     }

@@ -51,7 +51,7 @@
     <section id="cta-section">
         <div id="stay-in-contact-section">
             <h2>Stay In Contact</h2>
-            <form id="stay-in-contact-form">
+            <form id="stay-in-contact-form" action="#!">
                 <div class="contact-input">
                     <input id="contact-input-name" type="text" class="validate" name="name">
                     <label for="contact-input-name">Name</label>
@@ -66,7 +66,7 @@
                         <a href="#what-do-you-do-with-my-information-modal" class="modal-trigger">What do you do with my information?</a>
                     </small>
                 </div>
-                <div class="cta"><button style="white-space: nowrap">Sign Up</button></div>
+                <div class="cta"><button style="white-space: nowrap; width: 100%">Sign Up</button></div>
             </form>
         </div>
 
@@ -135,7 +135,7 @@
                 <a href="https://www.facebook.com/lpduvalfl/" class="col l2" target="_blank"><img src="/images/social/facebook.png" class="responsive-img"></a>
                 <a href="https://twitter.com/lpduvalfl" class="col l2" target="_blank"><img src="/images/social/twitter.png" class="responsive-img"></a>
                 <a href="https://www.meetup.com/LPDuvalFL/" class="col l2" target="_blank"><img src="/images/social/meetup.jpg" class="responsive-img"></a>
-                <a href="lpduvalfl.slack.com" class="col l2" target="_blank"><img src="/images/social/slack.svg" class="responsive-img"></a>
+                <a href="https://lpduvalfl.slack.com" class="col l2" target="_blank"><img src="/images/social/slack.svg" class="responsive-img"></a>
             </p>
 
             <h3>Meetings</h3>
@@ -207,8 +207,8 @@
 
         <footer>
             <h3>Learn More</h3>
-            <a href="register">Become a member</a>
-            <a href="donate" class="contribute-button">Donate</a>
+            <a href="/register">Become a member</a>
+            <a href="/donate" class="contribute-button">Donate</a>
         </footer>
     </section>
 
@@ -236,36 +236,29 @@
         <div>
             <h4>Who We Are</h4>
             <ul>
-                <li>Introduction</li>
-                <li>Platform</li>
-                <li>On The Issues</li>
-                <li>Frequently Asked Questions</li>
-                <li>State Affiliate</li>
-                <li>National Party</li>
+                <li><a href="https://www.lp.org">National Party</a></li>
+                <li><a href="https://www.lpf.org">State Affiliate</a></li>
+                <li>Bylaws (coming soon)</li>
             </ul>
         </div>
 
         <div>
             <h4>Meet Us</h4>
             <ul>
-                <li>Introduction</li>
-                <li>Platform</li>
-                <li>On The Issues</li>
-                <li>Frequently Asked Questions</li>
-                <li>State Affiliate</li>
-                <li>National Party</li>
+                <li><a href="">Events</a></li>
+                <li><a href="">Contact Us</a></li>
+                <li><a href="">Facebook</a></li>
+                <li><a href="">Twitter</a></li>
+                <li><a href="">Meetup</a></li>
+                <li><a href="">Slack</a></li>
             </ul>
         </div>
 
         <div>
             <h4>Get Involved</h4>
             <ul>
-                <li>Introduction</li>
-                <li>Platform</li>
-                <li>On The Issues</li>
-                <li>Frequently Asked Questions</li>
-                <li>State Affiliate</li>
-                <li>National Party</li>
+                <li><a href="/register">Become a member</a></li>
+                <li><a href="/donate">Donate</a></li>
             </ul>
         </div>
     </div>
@@ -333,7 +326,7 @@
             If you're not already a member of the affiliate, we'd like to invite you to join. It's free and easy.
             You only have to be a registered LPF voter and answer give us some more info about yourself.
 
-            <a href="register.html">Become a member</a>
+            <a href="/register">Become a member</a>
         </p>
 
     </section>
@@ -451,6 +444,60 @@
             </div>
         </div>
 
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+                <!--<img src="https://pbs.twimg.com/profile_images/1811310904/logo100x100_SM_twitter_400x400.jpg" style="width: 100%; height: 100px" class="activator">-->
+            </div>
+            <div class="card-content">
+                <span class="card-title activator">
+                    <i class="material-icons right">more_vert</i>
+                    Benjamin Wasson<br>
+                    Vice-Chairman / Treasurer
+                </span>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title">
+                    <i class="material-icons right">close</i>
+                    Benjamin Wasson<br>
+                    Vice-Chairman / Treasurer
+                </span>
+                <p>
+                    Ben is a great guy.
+                </p>
+            </div>
+            <div class="card-action">
+                <a href="#">Email</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+                <!--<img src="https://pbs.twimg.com/profile_images/1811310904/logo100x100_SM_twitter_400x400.jpg" style="width: 100%; height: 100px" class="activator">-->
+            </div>
+            <div class="card-content">
+                <span class="card-title activator">
+                    <i class="material-icons right">more_vert</i>
+                    DL Cummings<br>
+                    Secretary
+                </span>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title">
+                    <i class="material-icons right">close</i>
+                    DL Cummings<br>
+                    Secretary
+                </span>
+                <p>
+                    DL is a great guy.
+                </p>
+            </div>
+            <div class="card-action">
+                <a href="#">Email</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+
     </section>
     <footer>
         <a href="#!" class="modal-action modal-close">Close</a>
@@ -515,7 +562,7 @@
 
 <script src="https://js.stripe.com/v3/" async defer></script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGzxAhXZJ2ynmKACBABJ4kr-Mlfj7kCTs&libraries=places&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGzxAhXZJ2ynmKACBABJ4kr-Mlfj7kCTs&libraries=places&callback=initMap" defer></script>
 
 <script src="/js/app.js" defer></script>
 <script src="/js/meetup.js" defer></script>
