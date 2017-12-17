@@ -28,9 +28,13 @@ $(document).ready(function() {
 
             // This just submits the request to HubSpot through its automatic forms thingy
 
-            var $form = $(this);
+            var $form = $(this),
+                serializedForm = $form.serialize(),
+                email = $form.find('[name="email"]').val();
+            console.log(email);
 
-            $.get($form.prop('action'), $form.serialize());
+            $.get($form.prop('action'), serializedForm);
+            slackInvite(email);
 
             signupModal.modal('open');
         });
@@ -74,4 +78,19 @@ function contributeButtonClick(event) {
 
 function recaptchaCallback() {
 
+}
+
+function slackInvite(email) {
+    console.log('slack invite', email)
+    var inviteUrl = 'https://us-central1-jaxlp-187506.cloudfunctions.net/slack';
+
+    return $.ajax({
+        url: inviteUrl,
+        method: 'POST',
+        dataType: 'json',
+        crossDomain: true,
+        data: {
+            email: email
+        }
+    });
 }

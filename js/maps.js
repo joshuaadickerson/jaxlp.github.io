@@ -1,6 +1,7 @@
-$(document).ready(function() {
+function addressAutocomplete(elementId) {
+    var element = (document.getElementById(elementId));
     var autocomplete = new google.maps.places.Autocomplete(
-        (document.getElementById('contribute-input-address')),
+        element,
         { types: ['geocode'] }
     );
 
@@ -11,11 +12,11 @@ $(document).ready(function() {
             // User entered the name of a Place that was not suggested and
             // pressed the Enter key, or the Place Details request failed.
             window.alert("No details available for input: '" + place.name + "'");
-            return;
         }
     });
-});
-
-function initMap() {
-    // do nothing
 }
+
+
+$(document).ready(function() {
+    addressAutocomplete('contribute-input-address')
+});
