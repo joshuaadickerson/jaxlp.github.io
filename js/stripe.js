@@ -43,8 +43,10 @@ $(document).ready(function() {
         });
         input.addEventListener('keyup', function() {
             if (input.value.length === 0) {
+                console.log('input is empty');
                 input.classList.add('is-empty');
             } else {
+				console.log('input is NOT empty');
                 input.classList.remove('is-empty');
             }
         });

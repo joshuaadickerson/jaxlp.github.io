@@ -362,22 +362,8 @@
 
             <div class="contact-input">
                 <i class="material-icons prefix">attach_money</i>
-                <input id="contribute-input-amount" type="number" name="amount" required value="5">
+                <input id="contribute-input-amount" type="number" name="amount" required value="5" min="1">
                 <label for="contribute-input-name" class="active">Amount</label>
-            </div>
-
-            <div class="stripe-input">
-                <label>
-                    <div id="card-element" class="field is-empty"></div>
-                    <span><span>Credit or debit card</span></span>
-                </label>
-
-                <div class="outcome">
-                    <div class="error" role="alert"></div>
-                    <div class="success">
-                        Success! Your Stripe token is <span class="token"></span>
-                    </div>
-                </div>
             </div>
 
             <!--<p>-->
@@ -387,6 +373,20 @@
                 <!--</label>-->
             <!--</p>-->
         </form>
+
+        <div class="stripe-input">
+            <label>
+                <span id="card-element" class="field is-empty"></span>
+                <span><span>Credit or debit card</span></span>
+            </label>
+
+            <div class="outcome">
+                <div class="error" role="alert" id="card-errors"></div>
+                <div class="success">
+                    Success! Your Stripe token is <span class="token"></span>
+                </div>
+            </div>
+        </div>
     </section>
     <footer>
         <a href="#!" class="modal-action modal-close">Cancel</a>
