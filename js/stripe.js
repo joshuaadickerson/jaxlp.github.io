@@ -70,6 +70,8 @@ $(document).ready(function() {
     form.addEventListener('submit', function(event) {
         event.preventDefault();
 
+        console.log('form submitted');
+
         if (!donateFormCanSubmit) {
             $('#donation-error-text').html('It appears you have already submitted your donation. For your safety, please refresh this page to submit another donation.');
             M.Modal.getInstance(document.getElementById('donation-error-modal')).open();
@@ -147,5 +149,6 @@ function stripeTokenHandler(token) {
         })
         .always(function (result) {
             form.removeChild(hiddenInput);
+            console.log(result);
         })
 }
