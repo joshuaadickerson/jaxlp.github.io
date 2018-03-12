@@ -1,5 +1,5 @@
 var donateFormAction = 'https://us-central1-jaxlp-187506.cloudfunctions.net/donate';
-var stripePublicKey = 'pk_test_YGBg7MPNOayQOOd7TcCGgAbd';
+var stripePublicKey = 'pk_live_R5owoJRXovuEh2hefRUMFhPv';
 var donateFormCanSubmit = true;
 
 $(document).ready(function() {
