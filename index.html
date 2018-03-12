@@ -366,12 +366,12 @@
                 <label for="contribute-input-name" class="active">Amount</label>
             </div>
 
-            <!--<p>-->
-                <!--<label for="contribute-input-subscribe">-->
-                    <!--<input id="contribute-input-subscribe" name="subscribe" type="checkbox">-->
-                    <!--<span>I'd like to setup a monthly subscription of this amount.</span>-->
-                <!--</label>-->
-            <!--</p>-->
+            <div class="outcome">
+                <div class="error" role="alert" id="card-errors"></div>
+                <!--<div class="success">-->
+                    <!--Success! Your Stripe token is <span class="token"></span>-->
+                <!--</div>-->
+            </div>
         </form>
 
         <div class="stripe-input">
@@ -379,18 +379,21 @@
                 <span id="card-element" class="field is-empty"></span>
                 <span><span>Credit or debit card</span></span>
             </label>
-
-            <div class="outcome">
-                <div class="error" role="alert" id="card-errors"></div>
-                <div class="success">
-                    Success! Your Stripe token is <span class="token"></span>
-                </div>
-            </div>
         </div>
+
+        <!--<p>-->
+        <!--<label for="contribute-input-subscribe">-->
+        <!--<input id="contribute-input-subscribe" name="subscribe" type="checkbox">-->
+        <!--<span>
+                I'd like to setup a monthly subscription of this amount.
+                Please contact <a href="mailto:info@jaxlp.com">info@jaxlp.com</a> to cancel
+                </span>-->
+        <!--</label>-->
+        <!--</p>-->
     </section>
     <footer>
         <a href="#!" class="modal-action modal-close">Cancel</a>
-        <a href="#!" class="modal-action modal-close">Submit</a>
+        <a href="#!" class="modal-action" id="contribute-submit">Submit</a>
     </footer>
 </aside>
 
@@ -498,6 +501,18 @@
             </div>
         </div>
 
+    </section>
+    <footer>
+        <a href="#!" class="modal-action modal-close">Close</a>
+    </footer>
+</aside>
+
+<aside id="thank-you-modal" class="modal">
+    <section>
+        <h4>Thank you</h4>
+        <p>
+            Thank you so very much for your contribution to liberty.
+        </p>
     </section>
     <footer>
         <a href="#!" class="modal-action modal-close">Close</a>

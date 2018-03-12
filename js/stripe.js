@@ -1,4 +1,5 @@
 var donateFormAction = 'https://us-central1-jaxlp-187506.cloudfunctions.net/donate';
+// var stripePublicKey = 'pk_test_YGBg7MPNOayQOOd7TcCGgAbd';
 var stripePublicKey = 'pk_live_R5owoJRXovuEh2hefRUMFhPv';
 var donateFormCanSubmit = true;
 
@@ -34,6 +35,7 @@ $(document).ready(function() {
     card.mount('#card-element');
 
     var inputs = document.querySelectorAll('input.field');
+
     Array.prototype.forEach.call(inputs, function(input) {
         input.addEventListener('focus', function() {
             input.classList.add('is-focused');
@@ -66,8 +68,9 @@ $(document).ready(function() {
     });
 
     // Create a token or display an error when the form is submitted.
-    var form = document.getElementById('contribute-form');
-    form.addEventListener('submit', function(event) {
+    var $form = $('#contribute-form');
+
+    $form.submit(function(event) {
         event.preventDefault();
 
         console.log('form submitted');
@@ -87,23 +90,30 @@ $(document).ready(function() {
             } else {
                 // Send the token to your server
                 stripeTokenHandler(result.token);
-            }
+
+				M.Modal.getInstance(document.getElementById('contribute-modal')).close();
+			}
         });
+    });
+
+	document.getElementById('contribute-submit').addEventListener('click', function (event) {
+	    $form.submit();
     });
 });
 
 function setOutcome(result) {
-    var successElement = document.querySelector('.success');
+    // var successElement = document.querySelector('.success');
     var errorElement = document.querySelector('.error');
-    successElement.classList.remove('visible');
+    // successElement.classList.remove('visible');
     errorElement.classList.remove('visible');
 
     if (result.token) {
         // Use the token to create a charge or a customer
         // https://stripe.com/docs/charges
-        successElement.querySelector('.token').textContent = result.token.id;
-        successElement.classList.add('visible');
-    } else if (result.error) {
+        // successElement.querySelector('.token').textContent = result.token.id;
+        // successElement.classList.add('visible');
+        console.log('Success! Your Stripe token is: ' + result.token.id);
+	} else if (result.error) {
         errorElement.textContent = result.error.message;
         errorElement.classList.add('visible');
     }
@@ -120,7 +130,7 @@ function stripeTokenHandler(token) {
     hiddenInput.setAttribute('value', token.id);
     form.appendChild(hiddenInput);
 
-    if (grecaptcha) {
+    if (typeof grecaptcha !== 'undefined' && grecaptcha) {
         var recaptchaResponse = document.createElement('input')
             .setAttribute('id', 'recaptcha-response')
             .setAttribute('name', 'recaptcha-response')
@@ -137,7 +147,7 @@ function stripeTokenHandler(token) {
     $.post(donateFormAction, serializedForm)
         .done(function (result) {
             console.log(result);
-            M.Modal.getInstance(document.getElementById('thank-you-modal')).open()
+            M.Modal.getInstance(document.getElementById('thank-you-modal')).open();
 
             donateFormCanSubmit = false;
         })
@@ -145,7 +155,7 @@ function stripeTokenHandler(token) {
             console.error(err);
             $('#donation-error-text').text(JSON.stringify(err));
             console.error(document.getElementById('donation-error-modal'));
-            M.Modal.getInstance(document.getElementById('donation-error-modal')).open()
+            M.Modal.getInstance(document.getElementById('donation-error-modal')).open();
         })
         .always(function (result) {
             form.removeChild(hiddenInput);
